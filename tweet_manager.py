@@ -3,7 +3,11 @@ import tweepy
 import HTMLParser
 import re
 import itertools
-from settings.secrets import CONSUMER_TOKEN, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+import os.path
+if not os.path.isfile('settings/default_secrets.py'):
+    from settings.secrets import CONSUMER_TOKEN, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+else:
+    from settings.default_secrets import CONSUMER_TOKEN, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 from settings.config import USER_IDS
 from app import db, Tweets
 import datetime
