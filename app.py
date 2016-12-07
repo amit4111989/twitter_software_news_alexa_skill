@@ -73,8 +73,8 @@ def combine_all_tweets(data, new=False):
     return content
 
 
-@ask.launch
-def start_skill():
+@ask.intent("SoftwareIntent")
+def software_skill():
     # TODO if no new tweets, ask if the user wants to hear old tweets starting
 
     all_tweets = Tweets.query.order_by(Tweets.tweet_id.desc()).all()
