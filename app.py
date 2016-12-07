@@ -114,7 +114,7 @@ def software_skill():
 
 @ask.intent("YesIntent")
 def read_random_tweets():
-    all_tweets = Tweets.query.order_by(Tweets.tweet_id.desc()).all()
+    all_tweets = Tweets.query.order_by(Tweets.tweet_id.desc()).all()[0:50]
     content = combine_all_tweets(all_tweets)
     return statement(content)
 
