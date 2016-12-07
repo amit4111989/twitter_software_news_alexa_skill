@@ -126,10 +126,10 @@ def software_skill():
     __handl_intent(intent)
 
 
-@ask.intent("SoftwareIntent")
-def software_skill():
+@ask.intent("BiggBossIntent")
+def bigg_boss_skill():
     # TODO if no new tweets, ask if the user wants to hear old tweets starting
-    session['intent'] = 'software'
+    session['intent'] = 'bigg_boss'
     __handl_intent(intent)
 
 
